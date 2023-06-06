@@ -1,10 +1,11 @@
 import os
 import json
-from pathlib import Path
-from typing import List, Final, Dict
+from typing import Final
 
-REPO_LIST_PATH: Final[str] = "repo_list.txt"
+REPO_LIST_PATH: Final[str] = "repo_list.json"
 REPO_PATH: Final[str] = "repos"
+ORIGIN_KEY: Final[str] = "origin"
+MIRROR_KEY: Final[str] = "mirror"
 
 
 def clone(mirror, origin):
@@ -26,12 +27,12 @@ def clone(mirror, origin):
 
 def main():
     os.makedirs(REPO_PATH, exist_ok=True)
-    with open("repo_list.json") as f:
+    with open(REPO_LIST_PATH) as f:
         content = json.load(f)
     os.chdir(REPO_PATH)
     for line in content:
-        origin = line.get("origin")
-        mirror = line.get("mirror")
+        origin = line.get(ORIGIN_KEY)
+        mirror = line.get(MIRROR_KEY)
         clone(mirror, origin)
     os.chdir("..")
 
