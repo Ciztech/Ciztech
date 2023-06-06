@@ -1,0 +1,158 @@
+[
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday01-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday01.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday02-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday02.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday03-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday03.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday04-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday04.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday05-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday05.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday06-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday06.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday07-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday07.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday08-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday08.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday09-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday09.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday10-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday10.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday11-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday11.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday12-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday12.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-cpoolday13-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/cpoolday13.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-countisland-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/count_island.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-Cworkshoplib-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/C_workshop_lib.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-rush1-enzo.turpin.git",
+    "mirror": "git@github.com:Ciztech/rush_1.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-100-REN-1-1-rush2-darrel.yetedji.git",
+    "mirror": "git@github.com:Ciztech/rush_2.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-101-REN-1-1-bsminiprintf-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_mini_printf.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-101-REN-1-1-finalstumper-martin.bellot.git",
+    "mirror": "git@github.com:Ciztech/final_stumper.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-101-REN-1-1-miniprintf-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/mini_printf.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-101-REN-1-1-myprintf-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/my_printf.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-110-REN-1-1-antman-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/ant_man.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-110-REN-1-1-bsantman-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_ant_man.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-110-REN-1-1-bsbsq-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_bsq.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-110-REN-1-1-bspushswap-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_push_swap.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-110-REN-1-1-BSQ-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bsq.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-110-REN-1-1-pushswap-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/push_swap.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-200-REN-2-1-bscorewar-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_core_war.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-200-REN-2-1-bsdante-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_dante.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-200-REN-2-1-bslemin-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_lemin.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-200-REN-2-1-dante-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/dante.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-200-REN-2-1-lemin-paul.flatres.git",
+    "mirror": "git@github.com:Ciztech/lem_in.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-solostumper01-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/solo_stumper_1.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-solostumper02-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/solo_stumper_2.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-solostumper03-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/solo_stumper_3.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-stumper1-leo.duval.git",
+    "mirror": "git@github.com:Ciztech/stumper_1.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-stumper2-quentin.bollore.git",
+    "mirror": "git@github.com:Ciztech/stumper_2.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-stumper3-thibaud.le-creurer.git",
+    "mirror": "git@github.com:Ciztech/stumper_3.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-stumper4-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/stumper_4.git"
+  }
+]
