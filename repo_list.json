@@ -154,5 +154,157 @@
   {
     "origin": "git@github.com:EpitechPromo2027/B-CPE-210-REN-2-1-stumper4-gabriel.hosquet.git",
     "mirror": "git@github.com:Ciztech/stumper_4.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-DOP-200-REN-2-1-bspopeye-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_popeye.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-DOP-200-REN-2-1-chocolatine-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/chocolatine.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-DOP-200-REN-2-1-popeye-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/popeye.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MAT-100-REN-1-1-101pong-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/101_pong.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MAT-200-REN-2-1-106bombyx-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/106_bombyx.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MAT-200-REN-2-1-107transfer-yann.perennes.git",
+    "mirror": "git@github.com:Ciztech/107_transfer.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MAT-200-REN-2-1-108trigo-yann.perennes.git",
+    "mirror": "git@github.com:Ciztech/108_trigo.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MAT-200-REN-2-1-109titration-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/109_titration.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MUL-100-REN-1-1-myhunter-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/my_hunter.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MUL-100-REN-1-1-myradar-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/my_radar.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MUL-200-REN-2-1-mypaint-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/my_paint.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-MUL-200-REN-2-1-myrpg-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/my_rpg.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PRO-100-REN-1-1-argumentletter-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/argument_letter.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PRO-100-REN-1-1-proemail-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/pro_email.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PRO-200-REN-2-1-3emails-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/3_emails.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-100-REN-1-1-bsmyls-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_my_ls.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-100-REN-1-1-bsnavy-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_my_navy.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-100-REN-1-1-bssokoban-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/my_sokoban.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-100-REN-1-1-myls-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/my_ls.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-100-REN-1-1-navy-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/navy.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-100-REN-1-1-sokoban-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/sokoban.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-200-REN-2-1-42sh-yann.perennes.git",
+    "mirror": "git@github.com:Ciztech/42_sh.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-200-REN-2-1-bs42sh-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_42_sh.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-200-REN-2-1-bsminishell1-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_minishell_1.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-200-REN-2-1-minishell1-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/minishell_1.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-PSU-200-REN-2-1-minishell2-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/minishell_2.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-SEC-200-REN-2-1-bsburp-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_burp.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-SEC-200-REN-2-1-burp-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/burp.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-WEB-200-REN-2-1-bsepytodo-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_epy_todo.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-WEB-200-REN-2-1-epytodo-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/epy_todo.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-AIA-200-REN-2-1-bsn4s-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/bs_n4s.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-AIA-200-REN-2-1-n4s-paul.flatres.git",
+    "mirror": "git@github.com:Ciztech/n4s.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-BOO-100-REN-1-1-rebirthCPE01-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/rebirth_cpe_01.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-BOO-100-REN-1-1-rebirthCPE02-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/rebirth_cpe_2.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-BOO-101-REN-1-1-phoenixd01-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/phoenix_day_1.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-BOO-101-REN-1-1-phoenixd02-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/phoenix_day_2.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-BOO-101-REN-1-1-phoenixd03-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/phoenix_day_3.git"
+  },
+  {
+    "origin": "git@github.com:EpitechPromo2027/B-BOO-101-REN-1-1-phoenixd04-gabriel.hosquet.git",
+    "mirror": "git@github.com:Ciztech/phoenix_day_4.git"
   }
 ]
