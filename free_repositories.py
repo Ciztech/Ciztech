@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 from typing import Final
 
 REPO_LIST_PATH: Final[str] = "repo_list.json"
@@ -29,15 +30,37 @@ def clone(mirror, origin):
     os.chdir("..")
 
 
+def all_mirror(content):
+    for line in content:
+        origin = line.get(ORIGIN_KEY)
+        mirror = line.get(MIRROR_KEY)
+        clone(mirror, origin)
+
+
+def specific_mirror(content):
+    for i in range(1, len(sys.argv)):
+        for line in content:
+            origin = line.get(ORIGIN_KEY)
+            mirror = line.get(MIRROR_KEY)
+            folder = mirror.split("/")
+            if len(folder) != 2:
+                return
+            _, name = folder
+            name = name[:-4]
+            if name == sys.argv[i]:
+                clone(mirror, origin)
+                break
+
+
 def main():
     os.makedirs(REPO_PATH, exist_ok=True)
     with open(REPO_LIST_PATH) as f:
         content = json.load(f)
     os.chdir(REPO_PATH)
-    for line in content:
-        origin = line.get(ORIGIN_KEY)
-        mirror = line.get(MIRROR_KEY)
-        clone(mirror, origin)
+    if len(sys.argv) == 1:
+        all_mirror(content)
+    else:
+        specific_mirror(content)
     os.chdir("..")
 
 
