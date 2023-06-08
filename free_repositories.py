@@ -3,12 +3,14 @@ import json
 import sys
 from typing import Final
 
-REPO_LIST_PATH: Final[str] = "repo_list.json"
-REPO_PATH: Final[str] = "repos"
+PATH: Final[str] = "/data/dev/Ciztech"
+
+REPO_LIST_PATH: Final[str] = f"{PATH}/repo_list.json"
+REPO_PATH: Final[str] = f"{PATH}/repos"
+TEMPLATE_PATH: Final[str] = f"{PATH}/template"
+
 ORIGIN_KEY: Final[str] = "origin"
 MIRROR_KEY: Final[str] = "mirror"
-TEMPLATE_PATH: Final[str] = "/data/dev/Ciztech/template"
-GIT_ATTRIBUTE_PATH: Final[str] = f"{TEMPLATE_PATH}/.gitattributes"
 
 
 def clone(mirror, origin):
@@ -25,7 +27,7 @@ def clone(mirror, origin):
         os.chdir(name)
     os.system("git pull epitech main")
     if not os.path.exists(".gitattributes"):
-        os.system(f"cp {GIT_ATTRIBUTE_PATH} .")
+        os.system(f"cp {TEMPLATE_PATH}/.gitattributes .")
     os.system("git push origin main")
     os.chdir("..")
 
@@ -38,18 +40,16 @@ def all_mirror(content):
 
 
 def specific_mirror(content):
-    for i in range(1, len(sys.argv)):
-        for line in content:
-            origin = line.get(ORIGIN_KEY)
-            mirror = line.get(MIRROR_KEY)
-            folder = mirror.split("/")
-            if len(folder) != 2:
-                return
-            _, name = folder
-            name = name[:-4]
-            if name == sys.argv[i]:
-                clone(mirror, origin)
-                break
+    for line in content:
+        origin = line.get(ORIGIN_KEY)
+        mirror = line.get(MIRROR_KEY)
+        folder = mirror.split("/")
+        if len(folder) != 2:
+            return
+        _, name = folder
+        name = name[:-4]
+        if name in sys.argv:
+            clone(mirror, origin)
 
 
 def main():
