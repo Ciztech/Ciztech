@@ -6,6 +6,8 @@ REPO_LIST_PATH: Final[str] = "repo_list.json"
 REPO_PATH: Final[str] = "repos"
 ORIGIN_KEY: Final[str] = "origin"
 MIRROR_KEY: Final[str] = "mirror"
+TEMPLATE_PATH: Final[str] = "/data/dev/Ciztech/template"
+GIT_ATTRIBUTE_PATH: Final[str] = f"{TEMPLATE_PATH}/.gitattributes"
 
 
 def clone(mirror, origin):
@@ -21,6 +23,8 @@ def clone(mirror, origin):
     else:
         os.chdir(name)
     os.system("git pull epitech main")
+    if not os.path.exists(".gitattributes"):
+        os.system(f"cp {GIT_ATTRIBUTE_PATH} .")
     os.system("git push origin main")
     os.chdir("..")
 
