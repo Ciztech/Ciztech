@@ -64,12 +64,10 @@ def main():
     os.makedirs(REPO_PATH, exist_ok=True)
     with open(REPO_LIST_PATH) as f:
         content = json.load(f)
-    os.chdir(REPO_PATH)
     if len(sys.argv) == 1:
         all_mirror(content)
     else:
         specific_mirror(content)
-    os.chdir("..")
 
 
 if __name__ == '__main__':
