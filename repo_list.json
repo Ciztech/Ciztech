@@ -306,5 +306,8 @@
   {
     "origin": "git@github.com:EpitechPromo2027/B-BOO-101-REN-1-1-phoenixd04-gabriel.hosquet.git",
     "mirror": "git@github.com:Ciztech/phoenix_day_4.git"
+  },
+  {
+    "mirror": "git@github.com:Ciztech/Cpp_lib.git"
   }
 ]
