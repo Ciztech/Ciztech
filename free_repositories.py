@@ -22,10 +22,14 @@ def clone(mirror, origin):
     if not os.path.exists(name):
         os.system(f"git clone {mirror} --recursive")
         os.chdir(name)
-        os.system(f"git remote add epitech {origin}")
+        if origin:
+            os.system(f"git remote add epitech {origin}")
     else:
         os.chdir(name)
-    os.system("git pull epitech main")
+    if origin:
+        os.system("git pull epitech main")
+    else:
+        os.system("git pull")
     if not (os.path.exists(".gitattributes") or "stumper_" in name):
         os.system(f"cp {TEMPLATE_PATH}/.gitattributes .")
     os.system("git push origin main")
