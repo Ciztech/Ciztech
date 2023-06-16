@@ -11,21 +11,22 @@ TEMPLATE_PATH: Final[str] = f"{PATH}/template"
 
 ORIGIN_KEY: Final[str] = "origin"
 MIRROR_KEY: Final[str] = "mirror"
+PATH_KEY: Final[str] = "path"
 
 
-def clone(mirror, origin):
+def clone(mirror, origin, path):
     folder = mirror.split("/")
     if len(folder) != 2:
         return
     _, name = folder
     name = name[:-4]
     if not os.path.exists(name):
-        os.system(f"git clone {mirror} --recursive")
-        os.chdir(name)
+        os.system(f"git clone {mirror} {path}/{name} --recursive")
+        os.chdir(f"{path}/{name}")
         if origin:
             os.system(f"git remote add epitech {origin}")
     else:
-        os.chdir(name)
+        os.chdir(f"{path}/{name}")
     if origin:
         os.system("git pull epitech main")
     else:
@@ -33,27 +34,30 @@ def clone(mirror, origin):
     if not (os.path.exists(".gitattributes") or "stumper_" in name):
         os.system(f"cp {TEMPLATE_PATH}/.gitattributes .")
     os.system("git push origin main")
-    os.chdir("..")
+    count = f"{path}/{name}".count('/')
+    os.chdir("/".join((".." for _ in range (count + 1))))
 
 
 def all_mirror(content):
     for line in content:
         origin = line.get(ORIGIN_KEY)
         mirror = line.get(MIRROR_KEY)
-        clone(mirror, origin)
+        path = line.get(PATH_KEY)
+        clone(mirror, origin, path)
 
 
 def specific_mirror(content):
     for line in content:
         origin = line.get(ORIGIN_KEY)
         mirror = line.get(MIRROR_KEY)
+        path = line.get(PATH_KEY)
         folder = mirror.split("/")
         if len(folder) != 2:
             return
         _, name = folder
         name = name[:-4]
         if name in sys.argv:
-            clone(mirror, origin)
+            clone(mirror, origin, path)
 
 
 def main():
