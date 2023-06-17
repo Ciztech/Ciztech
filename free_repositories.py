@@ -2,15 +2,35 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 import pathlib
 import sys
-
 from dataclasses import dataclass
 from pathlib import Path
 from time import perf_counter
 from typing import (
-    Final, TypedDict, List, Callable, Tuple, Coroutine, Any, Optional
+    Final, TypedDict, List, Callable,
+    Coroutine, Any, Optional
 )
+
+
+def setup_logger(logger_):
+    logger_.setLevel(logging.DEBUG)
+
+    console_handler = logging.StreamHandler()
+    file_handler = logging.FileHandler("mirrored.log")
+
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+
+    logger_.addHandler(console_handler)
+    logger_.addHandler(file_handler)
+    return logger_
+
+
+logger = setup_logger(logging.getLogger(__name__))
 
 PATH: Final[Path] = pathlib.Path.cwd()
 
@@ -23,20 +43,63 @@ MIRROR_KEY: Final[str] = "mirror"
 PATH_KEY: Final[str] = "path"
 
 
-async def run(cmd: str) -> Tuple[bytes, bytes]:
+async def run(cmd: str) -> bool:
+    logger.info(f"Running: {cmd}")
     proc = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE
     )
 
-    return await proc.communicate()
+    stdout, stderr = await proc.communicate()
+
+    if stderr:
+        logger.error(f"Failed command:\n{stderr.decode()}.")
+        return True
+
+    return False
 
 
 class RepoInfo(TypedDict):
     path: str
     mirror: str
     origin: Optional[str]
+
+
+class GitCmd:
+    path = None
+
+    @classmethod
+    def at(cls, path: Path):
+        cls.path = path
+        return cls
+
+    @classmethod
+    async def run(cls, *args):
+        command_base = "git"
+
+        if cls.path is not None:
+            command_base += f" -C {cls.path}"
+            cls.path = None
+
+        extras = ' '.join(args)
+        await run(f"{command_base} {extras}")
+
+    @classmethod
+    async def clone(cls, url: str, path: Path, recursive: bool = True):
+        await cls.run(f"clone {url} {path}" + (" --recursive" * recursive))
+
+    @classmethod
+    async def add_remote(cls, name: str, url: str):
+        await cls.run(f"remote add {name} {url}")
+
+    @classmethod
+    async def pull(cls, origin: str):
+        await cls.run("pull", origin or "origin main")
+
+    @classmethod
+    async def push(cls, origin: str):
+        await cls.run("pull", origin)
 
 
 @dataclass
@@ -64,25 +127,26 @@ class Repo:
         )
 
     async def make_mirror(self) -> None:
+        logger.info(f"Creating mirror of {self.name}")
         path = pathlib.Path.cwd() / self.path / self.name
 
         if not path.exists():
-            print(f"Cloning {self.name}")
-            await run(f"git clone {self.mirror} {path} --recursive")
+            await GitCmd.clone(self.mirror, path)
 
             if self.origin is not None:
-                print(f"Registering remote: {self.name} -> {self.origin}")
-                await run(f"git -C {path} remote add epitech {self.origin}")
+                logger.info(f"Add remote to epitech: {self.origin}")
+                await GitCmd.at(path).add_remote("epitech", self.origin)
 
-        print(f"Pulling: {self.name}")
-        await run(f"git -C {path} pull" + (" epitech main" * bool(self.origin)))
+        logger.info(f"Pulling {self.name}")
+        logger.debug(f"origin: {self.origin}")
+        await GitCmd.at(path).pull("epitech main" * bool(self.origin))
 
-        if not ((path / ".gitattributes").is_file() or "stumper_" in self.name):
-            print(f"Add gitattributes in {self.name}")
+        if not (path / ".gitattributes").is_file() and "stumper_" not in self.name:
+            logger.warning(f"Missing .gitattributes within {self.name}")
             await run(f"cp {TEMPLATE_PATH}/.gitattributes {path}")
 
-        print(f"Pushing on: {self.name}")
-        await run(f"git -C {path} push origin main")
+        logger.info(f"Push on {self.name}")
+        await GitCmd.at(path).push("origin main")
 
     async def _clone_from_args(self) -> None:
         if self.name in sys.argv:
@@ -107,7 +171,7 @@ async def main():
     )
 
     end = perf_counter()
-    print(f"Took {(end - marker):.3f}s.")
+    logger.info(f"Took {(end - marker):.3f}s.")
 
 
 if __name__ == '__main__':
