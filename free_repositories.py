@@ -43,21 +43,16 @@ MIRROR_KEY: Final[str] = "mirror"
 PATH_KEY: Final[str] = "path"
 
 
-async def run(cmd: str) -> bool:
-    logger.info(f"Running: {cmd}")
-    proc = await asyncio.create_subprocess_shell(
+async def run(cmd: str):
+    process = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,
-        stderr=asyncio.subprocess.PIPE
+        stderr=asyncio.subprocess.DEVNULL
     )
+    await process.wait()
+    stdout, _ = await process.communicate()
 
-    stdout, stderr = await proc.communicate()
-
-    if stderr:
-        logger.error(f"Failed command:\n{stderr.decode()}.")
-        return True
-
-    return False
+    return stdout.decode().strip()
 
 
 class RepoInfo(TypedDict):
@@ -83,7 +78,7 @@ class GitCmd:
             cls.path = None
 
         extras = ' '.join(args)
-        await run(f"{command_base} {extras}")
+        return await run(f"{command_base} {extras}")
 
     @classmethod
     async def clone(cls, url: str, path: Path, recursive: bool = True):
@@ -95,7 +90,19 @@ class GitCmd:
 
     @classmethod
     async def pull(cls, origin: str):
-        await cls.run("pull", origin or "origin main")
+        await cls.run("pull", origin + "main")
+
+
+    @classmethod
+    async def rev_parse(cls, origin: str):
+        if origin is not None:
+           out = await cls.run("rev-parse", f"--remotes={origin}")
+        else:
+            out = await cls.run("rev-parse", "HEAD")
+        print("git rev-parse output:", out)
+        logger.debug(f"rev-parse: {out}")
+        return
+
 
     @classmethod
     async def push(cls, origin: str):
@@ -111,10 +118,8 @@ class Repo:
     @property
     def name(self) -> str:
         folder = self.mirror.split("/")
-
         if len(folder) != 2:
             return "Unknown"
-
         _, name = folder
         return name[:-4]
 
@@ -136,17 +141,17 @@ class Repo:
             if self.origin is not None:
                 logger.info(f"Add remote to epitech: {self.origin}")
                 await GitCmd.at(path).add_remote("epitech", self.origin)
+                await GitCmd.at(path).rev_parse(self.origin)
 
         logger.info(f"Pulling {self.name}")
-        logger.debug(f"origin: {self.origin}")
-        await GitCmd.at(path).pull("epitech main" * bool(self.origin))
+        await GitCmd.at(path).pull("epitech" if self.origin else "origin",)
 
         if not (path / ".gitattributes").is_file() and "stumper_" not in self.name:
             logger.warning(f"Missing .gitattributes within {self.name}")
             await run(f"cp {TEMPLATE_PATH}/.gitattributes {path}")
 
         logger.info(f"Push on {self.name}")
-        await GitCmd.at(path).push("origin main")
+        await GitCmd.at(path).push("origin")
 
     async def _clone_from_args(self) -> None:
         if self.name in sys.argv:
@@ -166,11 +171,16 @@ async def main():
         content: List[RepoInfo] = json.load(f)
 
     marker = perf_counter()
-    await asyncio.gather(
-        *(Repo.from_dict(line).make_mirror() for line in content)
-    )
+
+    if len(sys.argv) == 1:
+        await asyncio.gather(*(Repo.from_dict(line).make_mirror() for line in content))
+    else:
+        for line in content:
+            if Repo.from_dict(line).name in sys.argv:
+                await asyncio.gather(Repo.from_dict(line).make_mirror())
 
     end = perf_counter()
+
     logger.info(f"Took {(end - marker):.3f}s.")
 
 

@@ -391,5 +391,9 @@
   {
     "path": "repos/OTHER",
     "mirror": "git@github.com:Ciztek/C_lib.git"
+  },
+  {
+    "path": "repos/OTHER",
+    "mirror": "git@github.com:Ciztek/training_web.git"
   }
 ]
